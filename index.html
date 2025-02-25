@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Book Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Pre-Website Landing Page -->
+    <div id="landing-page" class="landing-page">
+        <div class="landing-content">
+            <h1>Welcome to ComicArena</h1>
+            <button id="enter-button">Enter Here</button>
+        </div>
+    </div>
+
+    <!-- Main Website -->
+    <div id="main-website" class="main-website">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./media/Comics Arena LogoV2.png" alt="ComicVerse Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="desktop-only">Home</a></li>
+                <li><a href="#browse" class="desktop-only">Browse</a></li>
+                <li><a href="#search"><i class="fas fa-search"></i></a></li>
+                <li><a href="#signin" class="signin-button"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-carousel">
+                <div class="slide active">
+                    <img src="./media/fusion c2.png" alt="Comic 1">
+                    <div class="slide-content">
+                        <h2>Comic Title 1</h2>
+                        <p>Description of Comic 1.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./media/FUSION Cover Art v3.png" alt="Comic 2">
+                    <div class="slide-content">
+                        <h2>Comic Title 2</h2>
+                        <p>Description of Comic 2.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./media/pg10.png" alt="Comic 3">
+                    <div class="slide-content">
+                        <h2>Comic Title 3</h2>
+                        <p>Description of Comic 3.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+        </section>
+
+        <!-- Trending Comics Section -->
+        <section id="trending" class="comic-section">
+            <h2>Trending Comics</h2>
+            <div class="comic-carousel">
+                <div class="comic-item">
+                    <img src="./media/POSTER 1 (1).png" alt="Trending Comic 1">
+                    <h3>Comic Title 1</h3>
+                </div>
+                <div class="comic-item">
+                    <img src="./media/fusion c2.png" alt="Trending Comic 2">
+                    <h3>Comic Title 2</h3>
+                </div>
+                <div class="comic-item">
+                    <img src="./media/Page 18.png" alt="Trending Comic 3">
+                    <h3>Comic Title 3</h3>
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </section>
+
+        <!-- New Releases Section -->
+        <section id="new-releases" class="comic-section">
+            <h2>New Releases</h2>
+            <div class="comic-carousel">
+                <div class="comic-item">
+                    <img src="new1.jpg" alt="New Comic 1">
+                    <h3>Comic Title 1</h3>
+                </div>
+                <div class="comic-item">
+                    <img src="new2.jpg" alt="New Comic 2">
+                    <h3>Comic Title 2</h3>
+                </div>
+                <div class="comic-item">
+                    <img src="new3.jpg" alt="New Comic 3">
+                    <h3>Comic Title 3</h3>
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="quick-links">
+                <a href="#home">Home</a>
+                <a href="#trending">Trending</a>
+                <a href="#new-releases">New Releases</a>
+                <a href="#creators">Creators</a>
+            </div>
+            <p>&copy; 2023 ComicVerse. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
