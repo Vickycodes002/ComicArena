@@ -146,7 +146,7 @@ body {
 
 /* Comic Sections */
 .comic-section {
-    padding:10px 5%;
+    padding: 10px 5%;
 }
 
 .comic-item {
@@ -260,8 +260,9 @@ body {
     }
 
     .hero-carousel .slide img {
-        height: 90vh;
+        height: 70vh;
     }
+
 
     .comic-section .owl-carousel .comic-item {
         margin: 0 10px;
