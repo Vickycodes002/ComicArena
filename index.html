@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comic Book Website</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Pre-Website Landing Page -->
+    <!-- Landing Page -->
     <div id="landing-page" class="landing-page">
         <div class="landing-content">
             <h1>Welcome to ComicArena</h1>
@@ -35,16 +38,16 @@
 
         <!-- Hero Section -->
         <section id="home" class="hero">
-            <div class="hero-carousel">
-                <div class="slide active">
-                    <img src="./media/fusion c2.png" alt="Comic 1">
+            <div class="owl-carousel owl-theme hero-carousel">
+                <div class="slide">
+                    <img src="./media/FUSION Cover Art v3.png" alt="Comic 1">
                     <div class="slide-content">
                         <h2>Comic Title 1</h2>
                         <p>Description of Comic 1.</p>
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="./media/FUSION Cover Art v3.png" alt="Comic 2">
+                    <img src="./media/fusion c2.png" alt="Comic 2">
                     <div class="slide-content">
                         <h2>Comic Title 2</h2>
                         <p>Description of Comic 2.</p>
@@ -58,25 +61,23 @@
                     </div>
                 </div>
             </div>
-            <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
-            <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
         </section>
 
         <!-- Trending Comics Section -->
         <section id="trending" class="comic-section">
             <h2>Trending Comics</h2>
-            <div class="comic-carousel">
+            <div class="owl-carousel owl-theme">
                 <div class="comic-item">
-                    <img src="./media/POSTER 1 (1).png" alt="Trending Comic 1">
-                    <h3>Comic Title 1</h3>
+                    <img src="./media/aisha-corel-2-387x600.jpg" alt="Trending Comic 1">
+                    <h3>Aisha</h3>
                 </div>
                 <div class="comic-item">
-                    <img src="./media/fusion c2.png" alt="Trending Comic 2">
-                    <h3>Comic Title 2</h3>
+                    <img src="./media/FUSION Cover Art v3.png" alt="Trending Comic 2">
+                    <h3>Fusion</h3>
                 </div>
                 <div class="comic-item">
-                    <img src="./media/Page 18.png" alt="Trending Comic 3">
-                    <h3>Comic Title 3</h3>
+                    <img src="./media/micman.jpg" alt="Trending Comic 3">
+                    <h3>Macman</h3>
                 </div>
                 <!-- Add more items as needed -->
             </div>
@@ -85,18 +86,18 @@
         <!-- New Releases Section -->
         <section id="new-releases" class="comic-section">
             <h2>New Releases</h2>
-            <div class="comic-carousel">
+            <div class="owl-carousel owl-theme">
                 <div class="comic-item">
-                    <img src="new1.jpg" alt="New Comic 1">
-                    <h3>Comic Title 1</h3>
+                    <img src="./media/New_Warriors_Vol_4_4.jpg" alt="New Comic 1">
+                    <h3>New warriors</h3>
                 </div>
                 <div class="comic-item">
-                    <img src="new2.jpg" alt="New Comic 2">
-                    <h3>Comic Title 2</h3>
+                    <img src="./media/Oya1.jpg" alt="New Comic 2">
+                    <h3>Oya</h3>
                 </div>
                 <div class="comic-item">
-                    <img src="new3.jpg" alt="New Comic 3">
-                    <h3>Comic Title 3</h3>
+                    <img src="./media/pg10.png" alt="New Comic 3">
+                    <h3>Agent 99</h3>
                 </div>
                 <!-- Add more items as needed -->
             </div>
@@ -108,19 +109,16 @@
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
-            <div class="quick-links">
-                <a href="#home">Home</a>
-                <a href="#trending">Trending</a>
-                <a href="#new-releases">New Releases</a>
-                <a href="#creators">Creators</a>
-            </div>
-            <p>&copy; 2023 ComicVerse. All rights reserved.</p>
+            <p>&copy; 2025 ComicArena. All rights reserved.</p>
         </footer>
     </div>
 
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Your Custom JS -->
     <script src="script.js"></script>
 </body>
-
 </html>

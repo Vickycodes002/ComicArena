@@ -1,52 +1,68 @@
-// Landing Page Transition
-const landingPage = document.getElementById('landing-page');
-const mainWebsite = document.getElementById('main-website');
-const enterButton = document.getElementById('enter-button');
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded!');
 
-enterButton.addEventListener('click', () => {
-    landingPage.style.opacity = '0';
-    setTimeout(() => {
-        landingPage.style.display = 'none';
-        mainWebsite.style.display = 'block';
-    }, 500); // Match the duration of the fade-out animation
-});
+    // Landing Page Transition
+    const landingPage = document.getElementById('landing-page');
+    const enterButton = document.getElementById('enter-button');
+    const mainWebsite = document.getElementById('main-website');
 
-// Hero Carousel
-const heroCarousel = document.querySelector('.hero-carousel');
-const slides = document.querySelectorAll('.slide');
-const prevButton = document.querySelector('.prev-slide');
-const nextButton = document.querySelector('.next-slide');
-let currentSlide = 0;
+    if (enterButton && landingPage && mainWebsite) {
+        enterButton.addEventListener('click', () => {
+            console.log('Enter button clicked');
+            landingPage.style.opacity = '0';
+            setTimeout(() => {
+                landingPage.style.display = 'none';
+                mainWebsite.style.display = 'block';
+            }, 500); // Match the duration of the fade-out animation
+        });
+    } else {
+        console.error('Landing page elements not found!');
+    }
 
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) {
-            slide.classList.add('active');
+    // Initialize Owl Carousel for Hero Section
+    $('.hero-carousel').owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: true,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        responsive: {
+            0: {
+                items: 1
+            }
         }
     });
-}
 
-prevButton.addEventListener('click', () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-});
+    // Initialize Owl Carousel for Trending Comics and New Releases
+    $('.comic-section .owl-carousel').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        dots: false,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 4
+            }
+        }
+    });
 
-nextButton.addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-});
+    // Navigation Bar (Mobile)
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-// Auto-rotate carousel
-setInterval(() => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}, 5000);
-
-// Hamburger Menu
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            console.log('Hamburger menu clicked');
+            navLinks.classList.toggle('active');
+        });
+    } else {
+        console.error('Hamburger menu or nav links not found!');
+    }
 });

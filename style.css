@@ -8,7 +8,6 @@ body {
     color: #fff;
 }
 
-
 /* Landing Page */
 .landing-page {
     position: fixed;
@@ -24,7 +23,6 @@ body {
     z-index: 1000;
 }
 
-/* Gradient Overlay */
 .landing-page::before {
     content: '';
     position: absolute;
@@ -34,11 +32,6 @@ body {
     height: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
     z-index: -1;
-}
-
-.landing-content {
-    position: relative;
-    z-index: 1;
 }
 
 .landing-content h1 {
@@ -65,7 +58,7 @@ body {
 
 /* Main Website */
 .main-website {
-    display: none;
+    display: none; /* Hidden by default */
 }
 
 /* Navigation */
@@ -73,7 +66,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 5%;
+    padding: 5px 10%;
     background-color: #333;
     position: sticky;
     top: 0;
@@ -101,129 +94,69 @@ body {
     color: #e62429;
 }
 
-.nav-links .signin-button {
-    padding: 8px 16px;
-    background-color: #e62429;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
 
-.nav-links .signin-button:hover {
-    background-color: #b11313;
-}
-
-.hamburger {
-    display: none;
-}
 
 /* Hero Section */
 .hero {
     position: relative;
     height: 70vh;
     overflow: hidden;
-    background-color: #1a1a1a; 
 }
 
-.hero-carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
+.hero-carousel .slide {
     position: relative;
 }
 
-.slide img {
+.hero-carousel .slide img {
     width: 100%;
     height: 70vh;
     object-fit: cover;
 }
 
-/* Gradient Overlay for Carousel Images (Top to Bottom) */
-.slide::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(26, 26, 26, 1));
-    z-index: 1;
-}
-
-.slide-content {
+.hero-carousel .slide-content {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    z-index: 2;
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
 }
 
-.slide-content h2 {
+.hero-carousel .slide-content h2 {
     font-size: 32px;
     margin-bottom: 10px;
     color: #fff;
 }
 
-.slide-content p {
+.hero-carousel .slide-content p {
     font-size: 18px;
     color: #fff;
 }
 
-.prev-slide, .next-slide {
+.hero-carousel .slide::before {
+    content: '';
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    transition: background 0.3s;
-    z-index: 3;
-}
-
-.prev-slide:hover, .next-slide:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.prev-slide {
-    left: 10px;
-}
-
-.next-slide {
-    right: 10px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(26, 26, 26, 1), rgba(26, 26, 26, 0));
+    z-index: 1;
 }
 
 /* Comic Sections */
 .comic-section {
-    padding: 50px 10%;
-}
-
-.comic-section h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.comic-carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
+    padding:10px 5%;
 }
 
 .comic-item {
-    flex: 0 0 auto;
-    width: 200px;
     text-align: center;
+    width: 300px;
 }
 
 .comic-item img {
     width: 100%;
-    height: 300px;
+    height: 400px;
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s;
@@ -236,6 +169,31 @@ body {
 .comic-item h3 {
     font-size: 18px;
     margin-top: 10px;
+}
+
+/* Owl Carousel Navigation Arrows */
+.owl-carousel .owl-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5) !important;
+    color: #fff !important;
+    border: none;
+    padding: 10px !important;
+    font-size: 24px !important;
+    transition: background 0.3s;
+}
+
+.owl-carousel .owl-nav button:hover {
+    background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.owl-carousel .owl-nav .owl-prev {
+    left: 10px;
+}
+
+.owl-carousel .owl-nav .owl-next {
+    right: 10px;
 }
 
 /* Footer */
@@ -256,61 +214,68 @@ body {
     color: #e62429;
 }
 
-.quick-links {
-    margin: 20px 0;
-}
-
-.quick-links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s;
-}
-
-.quick-links a:hover {
-    color: #e62429;
-}
-
-/* Responsive Design */
+/* Mobile View */
 @media (max-width: 768px) {
-
     .landing-page {
         background: url(./media/mobilelandingpage1.jpg) no-repeat center center/cover;
     }
 
     .landing-content h1 {
-        font-size: 36px; /* Smaller font size for mobile */
+        font-size: 36px;
     }
 
     #enter-button {
-        padding: 12px 24px; /* Slightly smaller button for mobile */
+        padding: 12px 24px;
         font-size: 16px;
     }
+
     .nav-links {
-        gap: 10px; /* Reduce gap between items */
+        gap: 10px; 
     }
 
     .nav-links .desktop-only {
-        display: none; /* Hide Home and Browse links */
+        display: none; 
     }
 
     .nav-links .signin-button {
-        padding: 8px; /* Adjust padding for mobile */
-        background-color: transparent; /* Remove background color */
+        padding: 5px; 
+        background-color: transparent;
     }
 
     .nav-links .signin-button:hover {
-        background-color: transparent; /* Keep transparent on hover */
+        background-color: transparent; 
     }
 
     .nav-links .fa-user {
-        font-size: 20px;
-    }
-    .hero {
-        height: 75vh;
+        font-size: 15px; 
     }
 
-    .slide img {
-        height: 75vh;
+    .nav-links .fa-search {
+        font-size: 15px;
+    }
+
+
+    .hero {
+        height: 90vh;
+    }
+
+    .hero-carousel .slide img {
+        height: 90vh;
+    }
+
+    .comic-section .owl-carousel .comic-item {
+        margin: 0 10px;
+    }
+
+    .comic-section .owl-carousel .owl-stage {
+        padding-left: 10px;
+    }
+
+    .comic-item {
+        width: 150px;
+    }
+
+    .comic-item img {
+        height: 200px;
     }
 }
