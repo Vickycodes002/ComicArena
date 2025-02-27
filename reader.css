@@ -1,0 +1,133 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Back Arrow */
+.back-arrow {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.back-arrow a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.back-arrow a:hover {
+    color: #e62429;
+}
+
+/* Comic Reader Section */
+.comic-reader {
+    padding: 0;
+    text-align: center;
+}
+
+/* Loading Effect */
+.loading-effect {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.loading-logo {
+    width: 100px;
+    height: 100px;
+    filter: grayscale(100%) brightness(50%);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Comic Pages */
+.comic-pages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.comic-page {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.comic-page.in-view {
+    opacity: 1;
+}
+
+.comic-page {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Controls */
+.navigation-controls {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.navigation-controls.visible {
+    display: flex; /* Show when user reaches the last page */
+}
+
+.navigation-controls button {
+    padding: 10px 20px;
+    background-color: #e62429; /* Desktop background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.navigation-controls button:hover {
+    background-color: #b11313;
+}
+
+.navigation-controls button i {
+    margin: 0 5px;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .navigation-controls button {
+        background-color: transparent; /* No background on mobile */
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .navigation-controls button i {
+        margin: 0;
+    }
+}
