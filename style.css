@@ -263,6 +263,11 @@ body {
         height: 70vh;
     }
 
+    .comic-section {
+        margin-top: -130px; /* Move the comic section up */
+        margin-bottom: 100px;
+    }
+
 
     .comic-section .owl-carousel .comic-item {
         margin: 0 10px;
@@ -274,6 +279,7 @@ body {
 
     .comic-item {
         width: 150px;
+        margin: 0 10px;
     }
 
     .comic-item img {
