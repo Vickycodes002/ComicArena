@@ -66,3 +66,25 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Hamburger menu or nav links not found!');
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded!');
+
+    // Like Button Functionality
+    const loveButton = document.querySelector('.love-button');
+    if (loveButton) {
+        loveButton.addEventListener('click', () => {
+            console.log('Comic liked!');
+            loveButton.classList.toggle('liked');
+        });
+    }
+
+    // Notify Button Functionality
+    const notifyButton = document.querySelector('.notify-button');
+    if (notifyButton) {
+        notifyButton.addEventListener('click', () => {
+            console.log('Notifications enabled!');
+            notifyButton.classList.toggle('notified');
+        });
+    }
+});
