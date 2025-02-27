@@ -10,9 +10,22 @@
     <link rel="stylesheet" href="description.css">
 </head>
 <body>
+    <!-- Navigation for Desktop -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./media/Comics Arena LogoV2.png" alt="ComicArena Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse.html">Browse</a></li>
+            <li><a href="#search"><i class="fas fa-search"></i></a></li>
+            <li><a href="#signin" class="signin-button"><i class="fas fa-user"></i></a></li>
+        </ul>
+    </nav>
+
     <!-- Back Arrow for Mobile -->
     <div class="back-arrow">
-        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+        <a href="#"><i class="fas fa-arrow-left"></i></a>
     </div>
 
     <!-- Comic Details Section -->
@@ -42,14 +55,14 @@
 
             <!-- Available Issues -->
             <div class="available-issues">
-                <h2>Issues</h2>
+                <h2>Available Issues</h2>
                 <div class="issues-list">
                     <div class="issue">
-                        <img src="./media/joyy.jpg" alt="Issue 1">
+                        <img src="./media/micman.jpg" alt="Issue 1">
                         <p>Issue #1</p>
                     </div>
                     <div class="issue">
-                        <img src="./media/micman.jpg" alt="Issue 2">
+                        <img src="./media/joyy.jpg" alt="Issue 2">
                         <p>Issue #2</p>
                     </div>
                     <div class="issue">
@@ -64,21 +77,21 @@
 
     <!-- Bottom Navigation for Mobile -->
     <div class="bottom-nav">
-        <a href="#"><i class="fas fa-home"></i><span>Home</span></a>
-        <a href="#"><i class="fas fa-compass"></i><span>Browse</span></a>
+        <a href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="browse.html"><i class="fas fa-compass"></i><span>Browse</span></a>
         <a href="#"><i class="fas fa-heart"></i><span>Favorites</span></a>
         <a href="#"><i class="fas fa-user"></i><span>Profile</span></a>
     </div>
 
     <!-- Footer -->
-    <!-- <footer class="footer">
+    <footer class="footer">
         <div class="social-links">
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
         <p>&copy; 2023 ComicVerse. All rights reserved.</p>
-    </footer> -->
+    </footer>
 
     <!-- Your Custom JS -->
     <script src="script.js"></script>

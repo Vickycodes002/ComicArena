@@ -8,6 +8,39 @@ body {
     color: #fff;
 }
 
+/* Navigation for Desktop */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    height: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e62429;
+}
+
 /* Back Arrow for Mobile */
 .back-arrow {
     display: none; /* Hidden by default */
@@ -211,6 +244,10 @@ body {
 
 /* Mobile View */
 @media (max-width: 768px) {
+    .navbar {
+        display: none; /* Hide navigation bar on mobile */
+    }
+
     .back-arrow {
         display: block; /* Show back arrow on mobile */
     }
@@ -287,21 +324,33 @@ body {
     }
 
     .bottom-nav {
-        display: flex;
+        display: flex; /* Show bottom navigation on mobile */
+    }
+
+    .footer{
+        display: none;
     }
 }
 
 /* Desktop View */
 @media (min-width: 769px) {
+    .back-arrow {
+        display: none; /* Hide back arrow on desktop */
+    }
+
     .comic-cover::before {
-        display: none;
+        display: none; /* Remove gradient overlay on desktop */
     }
 
     .action-buttons-on-image {
-        display: none; 
+        display: none; /* Hide buttons on image for desktop */
     }
 
     .action-buttons {
-        display: flex;
+        display: flex; /* Show buttons beside description for desktop */
+    }
+
+    .bottom-nav {
+        display: none; /* Hide bottom navigation on desktop */
     }
 }
