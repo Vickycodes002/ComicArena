@@ -1,35 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Elements
+    // Select all comic pages
     const comicPages = document.querySelectorAll('.comic-page');
-    const navigationControls = document.querySelector('.navigation-controls');
-    const prevIssueButton = document.querySelector('.prev-issue');
-    const nextIssueButton = document.querySelector('.next-issue');
-    const loadingEffect = document.querySelector('.loading-effect');
 
-    // Function to show/hide loading effect
-    function toggleLoading(show) {
-        loadingEffect.style.display = show ? 'block' : 'none';
-    }
-
-    // Track loading for each page
+    // Loop through each page and apply loading logic
     comicPages.forEach((page, index) => {
-        page.style.opacity = '0'; // Hide the page initially
+        // Create a loading effect element for each page
+        const loadingEffect = document.createElement('div');
+        loadingEffect.classList.add('loading-effect');
+        loadingEffect.innerHTML = '<img src="loading-logo.png" alt="Loading..." class="loading-logo">';
+        page.parentElement.insertBefore(loadingEffect, page);
 
-        // Show loading effect before the page starts loading
-        toggleLoading(true);
+        // Hide the page initially
+        page.style.opacity = '0';
+
+        // Check if the image is already loaded (e.g., cached)
+        if (page.complete) {
+            // If already loaded, hide the loading effect and show the page
+            loadingEffect.style.display = 'none';
+            page.style.opacity = '1';
+        } else {
+            // Show the loading effect while the page is loading
+            loadingEffect.style.display = 'block';
+        }
 
         // When the page is fully loaded
         page.addEventListener('load', () => {
+            loadingEffect.style.display = 'none'; // Hide loading effect
             page.style.opacity = '1'; // Show the page
-            toggleLoading(false); // Hide loading effect for this page
         });
 
         // If the page fails to load
         page.addEventListener('error', () => {
             console.error(`Failed to load page ${index + 1}`);
-            toggleLoading(false); // Hide loading effect even if the page fails
+            loadingEffect.style.display = 'none'; // Hide loading effect even if the page fails
         });
     });
+
+    // Navigation buttons logic
+    const navigationControls = document.querySelector('.navigation-controls');
+    const prevIssueButton = document.querySelector('.prev-issue');
+    const nextIssueButton = document.querySelector('.next-issue');
 
     // Observe when the last page is in view
     const observer = new IntersectionObserver(
@@ -52,27 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Navigation button functionality
     prevIssueButton.addEventListener('click', () => {
         alert('Navigate to previous issue');
-        // Implement previous issue navigation logic
     });
 
     nextIssueButton.addEventListener('click', () => {
         alert('Navigate to next issue');
-        // Implement next issue navigation logic
-    });
-
-    // Smooth fade-in effect for comic pages as they come into view
-    const pageObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1'; // Fade in the page
-                }
-            });
-        },
-        { threshold: 0.2 } // Trigger when 20% of the page is visible
-    );
-
-    comicPages.forEach((page) => {
-        pageObserver.observe(page);
     });
 });
