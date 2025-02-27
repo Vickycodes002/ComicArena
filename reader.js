@@ -6,40 +6,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextIssueButton = document.querySelector('.next-issue');
     const loadingEffect = document.querySelector('.loading-effect');
 
-    let loadedPages = 0;
-
     // Function to show/hide loading effect
     function toggleLoading(show) {
         loadingEffect.style.display = show ? 'block' : 'none';
     }
 
-    // Show loading effect before images start loading
-    toggleLoading(true);
-
-    // Track page loading
+    // Track loading for each page
     comicPages.forEach((page, index) => {
-        page.style.opacity = '0'; // Set initial opacity to 0 (hidden)
+        page.style.opacity = '0'; // Hide the page initially
 
-        // When a page loads
+        // Show loading effect before the page starts loading
+        toggleLoading(true);
+
+        // When the page is fully loaded
         page.addEventListener('load', () => {
-            loadedPages++;
-            page.style.opacity = '1'; // Fade in the page
-
-            // Hide loading effect only after the last page loads
-            if (loadedPages === comicPages.length) {
-                toggleLoading(false);
-            }
+            page.style.opacity = '1'; // Show the page
+            toggleLoading(false); // Hide loading effect for this page
         });
 
-        // If a page fails to load
+        // If the page fails to load
         page.addEventListener('error', () => {
-            loadedPages++;
             console.error(`Failed to load page ${index + 1}`);
-
-            // Hide loading effect if all pages are done (even if some failed)
-            if (loadedPages === comicPages.length) {
-                toggleLoading(false);
-            }
+            toggleLoading(false); // Hide loading effect even if the page fails
         });
     });
 
