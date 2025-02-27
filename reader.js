@@ -6,14 +6,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextIssueButton = document.querySelector('.next-issue');
     const loadingEffect = document.querySelector('.loading-effect');
 
+    // Track loaded pages
+    let loadedPages = 0;
+
     // Show loading effect when a new page is being loaded
     comicPages.forEach((page, index) => {
+        // Set initial opacity to 0 for all pages
+        page.style.opacity = '0';
+
+        // When a page loads, increment the counter and show it
         page.addEventListener('load', () => {
-            if (index < comicPages.length - 1) {
+            loadedPages++;
+            page.style.opacity = '1'; // Show the page
+
+            // Show loading effect only if there are more pages to load
+            if (loadedPages < comicPages.length) {
                 loadingEffect.style.display = 'block';
-                setTimeout(() => {
-                    loadingEffect.style.display = 'none';
-                }, 1000); // Simulate loading delay
+            } else {
+                loadingEffect.style.display = 'none'; // Hide loading effect when all pages are loaded
+            }
+        });
+
+        // If a page fails to load, still increment the counter
+        page.addEventListener('error', () => {
+            loadedPages++;
+            if (loadedPages === comicPages.length) {
+                loadingEffect.style.display = 'none'; // Hide loading effect if all pages are done
             }
         });
     });
@@ -49,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
+                entry.target.style.opacity = '1'; // Fade in the page
             }
         });
     }, { threshold: 0.1 });
