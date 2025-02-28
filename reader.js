@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create a loading effect element for each page
         const loadingEffect = document.createElement('div');
         loadingEffect.classList.add('loading-effect');
-        loadingEffect.innerHTML = '<img src="loading-logo.png" alt="Loading..." class="loading-logo">';
+        loadingEffect.innerHTML = '<img src="./media/Comics Arena LogoV2.png" alt="Loading..." class="loading-logo">';
         page.parentElement.insertBefore(loadingEffect, page);
 
         // Hide the page initially
