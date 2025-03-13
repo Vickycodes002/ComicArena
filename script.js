@@ -108,3 +108,58 @@ $(document).ready(function () {
         }
     });
 });
+
+// search bar
+
+document.addEventListener('DOMContentLoaded', () => {
+    const searchContainer = document.querySelector('.search-container');
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    const comicItems = document.querySelectorAll('.comic-item'); // Select all comic items
+
+    // Toggle search bar expansion
+    searchButton.addEventListener('click', () => {
+        searchContainer.classList.toggle('active');
+        if (searchContainer.classList.contains('active')) {
+            searchInput.focus(); // Focus on the input when expanded
+        }
+    });
+
+    // Function to filter comics based on search input
+    function filterComics() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+
+        comicItems.forEach((comic) => {
+            const comicTitle = comic.querySelector('h3').textContent.toLowerCase();
+            if (comicTitle.includes(searchTerm)) {
+                comic.style.display = 'block'; // Show matching comics
+            } else {
+                comic.style.display = 'none'; // Hide non-matching comics
+            }
+        });
+    }
+
+    // Trigger search on button click
+    searchButton.addEventListener('click', (e) => {
+        if (searchContainer.classList.contains('active')) {
+            e.preventDefault(); // Prevent default behavior if search bar is expanded
+            filterComics();
+        }
+    });
+
+    // Trigger search on pressing Enter key
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            filterComics();
+        }
+    });
+
+    // Clear search and show all comics when input is empty
+    searchInput.addEventListener('input', () => {
+        if (searchInput.value.trim() === '') {
+            comicItems.forEach((comic) => {
+                comic.style.display = 'block'; // Show all comics
+            });
+        }
+    });
+});
