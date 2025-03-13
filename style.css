@@ -140,18 +140,6 @@ body {
     padding: 5px 10px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .search-container.active .search-input {
-        width: 150px; /* Smaller width for mobile */
-    }
-
-    .search-button {
-        font-size: 16px;
-    }
-}
-
-
 
 /* Hero Section */
 .hero {
@@ -570,5 +558,13 @@ body {
 
     .upcoming-carousel .owl-nav .owl-next {
         right: -20px;
+    }
+
+    .search-container.active .search-input {
+        width: 150px; /* Smaller width for mobile */
+    }
+
+    .search-button {
+        font-size: 16px;
     }
 }
