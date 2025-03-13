@@ -88,3 +88,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+$(document).ready(function () {
+    $('.upcoming-carousel').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        dots: false,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    });
+});
