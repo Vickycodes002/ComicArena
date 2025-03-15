@@ -423,6 +423,35 @@ body {
     background-color: #b11313;
 }
 
+.bottom-nav {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color:  #3333335c;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.bottom-nav a {
+    flex: 1;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.bottom-nav a i {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.bottom-nav a span {
+    display: none; /* Hide text, show only icons */
+}
+
 
 
 /* Footer */
@@ -536,7 +565,7 @@ body {
     }
 
     .upcoming-carousel .upcoming-comic-item img {
-        height: 250px; /* Slightly smaller height for mobile */
+        height: 250px; 
     }
 
     .upcoming-carousel .upcoming-comic-info h3 {
@@ -562,6 +591,10 @@ body {
 
     .search-container.active .search-input {
         width: 150px; /* Smaller width for mobile */
+    }
+
+    .bottom-nav {
+        display: flex; /* Show bottom navigation on mobile */
     }
 
     .search-button {
