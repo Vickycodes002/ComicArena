@@ -95,130 +95,121 @@ body {
 }
 
 
-/* Filters Section */
-.filters {
+/* Library Page */
+.library-page {
     padding: 20px;
-    background-color: #333;
-    border-radius: 10px;
-    margin: 20px;
+    background-color: #1a1a1a;
+    color: #fff;
 }
 
-.filter-group {
+.library-page h2 {
+    font-size: 24px;
     margin-bottom: 20px;
 }
 
-.filter-group label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-.filter-group select, .toggle-buttons {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #444;
-    color: #fff;
-}
-
-.toggle-buttons button {
-    padding: 10px 20px;
-    background-color: #555;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    margin-right: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.toggle-buttons button.active {
-    background-color: #e62429;
-}
-
-.toggle-buttons button:hover {
-    background-color: #b11313;
-}
-
-/* Comics Grid */
-.comics-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.comic-card {
-    width: 200px;
-    background-color: #333;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.comic-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.comic-card img {
-    width:100% ;
-    height: 200px; /* Match homepage comic section height */
-    object-fit: cover; /* Ensures images fill the space without distortion */
-}
-
-.comic-card h3 {
-    font-size: 20px;
-    margin: 10px;
-}
-
-.comic-card p {
-    font-size: 14px;
-    margin: 10px;
-    color: #ccc;
-}
-
-.tags {
+.library-categories {
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.category {
+    background-color: #262626;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.category h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
     gap: 10px;
-    margin: 10px;
 }
 
-.tags span {
-    padding: 5px 10px;
-    background-color: #444;
-    border-radius: 5px;
-    font-size: 12px;
+.category h3 i {
+    color: #e62429;
 }
 
+.comic-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px; /* Space for scrollbar */
+}
+
+.comic-item {
+    flex: 0 0 120px;
+    text-align: center;
+}
+
+.comic-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.comic-item h4 {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .comic-item {
+        flex: 0 0 100px;
+    }
+
+    .comic-item img {
+        height: 120px;
+    }
+
+    .comic-item h4 {
+        font-size: 12px;
+    }
+}
+
+/* Bottom Navigation Bar */
 .bottom-nav {
-    display: none; /* Hidden by default */
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #3333335c;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
     padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
 
-.bottom-nav a {
-    flex: 1;
-    text-align: center;
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: #fff;
     text-decoration: none;
     font-size: 14px;
+    transition: color 0.3s ease;
 }
 
-.bottom-nav a i {
-    display: block;
+.nav-item i {
     font-size: 20px;
     margin-bottom: 5px;
 }
 
-.bottom-nav a span {
-    display: none; /* Hide text, show only icons */
+.nav-item:hover,
+.nav-item.active {
+    color: #e62429;
+}
+
+/* Responsive Design */
+@media (min-width: 769px) {
+    .bottom-nav {
+        display: none; /* Hide on desktop */
+    }
 }
 
 /* Footer */
@@ -289,22 +280,6 @@ body {
 
     .search-button {
         font-size: 16px;
-    }
-    .filters {
-        margin: 10px;
-    }
-
-
-    .comics-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-
-    .comic-card img {
-        height: 150px;
-    }
-
-    .comics-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 
     .bottom-nav {

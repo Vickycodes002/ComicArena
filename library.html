@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Comics - ComicArena</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="library.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="./media/Comics Arena LogoV2.png" alt="ComicArena Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</li></a>
+            <li>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search comics..." class="search-input">
+                    <button id="search-button" class="search-button"><i class="fas fa-search"></i></button>
+                </div>
+            </li>
+            <li><a href="#signin" class="signin-button"><i class="fas fa-user"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Library Page -->
+    <section class="library-page">
+        <h2>Library</h2>
+        <div class="library-categories">
+            <!-- Read Later -->
+            <div class="category">
+                <h3><i class="fas fa-bookmark"></i> Read Later</h3>
+                <div class="comic-list">
+                    <div class="comic-item">
+                        <img src="./media/Page 16 (1realer).png" alt="Comic 1">
+                        <h4>Realer</h4>
+                    </div>
+                    <!-- more comics here -->
+                </div>
+            </div>
+
+            <!-- Liked -->
+            <div class="category">
+                <h3><i class="fas fa-heart"></i> Liked</h3>
+                <div class="comic-list">
+                    <div class="comic-item">
+                        <img src="./media/aisha-corel-2-387x600.jpg" alt="Comic 2">
+                        <h4>Aisha</h4>
+                    </div>
+                    <div class="comic-item">
+                        <img src="./media/joyy.jpg" alt="Comic 3">
+                        <h4>Joyy</h4>
+                    </div>
+                    <!--more comics here -->
+                </div>
+            </div>
+
+            <!-- Recently Read -->
+            <div class="category">
+                <h3><i class="fas fa-history"></i> Recently Read</h3>
+                <div class="comic-list">
+                    <div class="comic-item">
+                        <img src="./media/joyy.jpg" alt="Comic 3">
+                        <h4>Joyy</h4>
+                    </div>
+                    <div class="comic-item">
+                        <img src="./media/aisha-corel-2-387x600.jpg" alt="Comic 2">
+                        <h4>Aisha</h4>
+                    </div>
+                    <!--more comics here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="library.html" class="nav-item">
+            <i class="fas fa-book"></i>
+            <span>Library</span>
+        </a>
+        <a href="notification.html" class="nav-item">
+            <i class="fas fa-bell"></i>
+            <span>Notifications</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 ComicArena. All rights reserved.</p>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Your Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>

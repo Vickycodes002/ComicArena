@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Comics - ComicArena</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="notification.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="./media/Comics Arena LogoV2.png" alt="ComicArena Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</li></a>
+            <!-- <li>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search comics..." class="search-input">
+                    <button id="search-button" class="search-button"><i class="fas fa-search"></i></button>
+                </div>
+            </li> -->
+            <li><a href="#signin" class="signin-button"><i class="fas fa-user"></i></a></li>
+        </ul>
+    </nav>
+    <!-- Notifications Page -->
+    <section class="notifications-page">
+        <h2>Notifications</h2>
+        <div class="notification-actions">
+            <button id="mark-all-read">Mark All as Read</button>
+            <button id="clear-notifications">Clear Notifications</button>
+        </div>
+        <div class="notification-list">
+            <!-- Notification Card -->
+            <div class="notification-card unread">
+                <div class="notification-content">
+                    <h3 class="notification-title">New Title Out Now! 📢</h3>
+                    <p class="notification-message">Issue Two is Available to Read! 📖</p>
+                    <p class="notification-date">October 10, 2023, 10:00 AM</p>
+                </div>
+                <div class="notification-indicator"></div>
+            </div>
+
+            <!-- Notification Card (Read) -->
+            <div class="notification-card">
+                <div class="notification-content">
+                    <h3 class="notification-title">Comic Update 🚀</h3>
+                    <p class="notification-message">New pages added to "Rising Sun".</p>
+                    <p class="notification-date">October 9, 2023, 3:00 PM</p>
+                </div>
+            </div>
+            <!-- more notifications here -->
+        </div>
+    </section>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="library.html" class="nav-item">
+            <i class="fas fa-book"></i>
+            <span>Library</span>
+        </a>
+        <a href="notification.html" class="nav-item">
+            <i class="fas fa-bell"></i>
+            <span>Notifications</span>
+        </a>
+    </nav>
+</body>

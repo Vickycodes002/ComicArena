@@ -194,34 +194,45 @@ body {
     margin-top: 10px;
 }
 
-/* Bottom Navigation for Mobile */
+/* Bottom Navigation Bar */
 .bottom-nav {
-    display: none; /* Hidden by default */
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: transparent;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
     padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
 
-.bottom-nav a {
-    flex: 1;
-    text-align: center;
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: #fff;
     text-decoration: none;
     font-size: 14px;
+    transition: color 0.3s ease;
 }
 
-.bottom-nav a i {
-    display: block;
+.nav-item i {
     font-size: 20px;
     margin-bottom: 5px;
 }
 
-.bottom-nav a span {
-    display: none; /* Hide text, show only icons */
+.nav-item:hover,
+.nav-item.active {
+    color: #e62429;
+}
+
+/* Responsive Design */
+@media (min-width: 769px) {
+    .bottom-nav {
+        display: none; /* Hide on desktop */
+    }
 }
 
 /* Footer */
@@ -326,6 +337,8 @@ body {
     .bottom-nav {
         display: flex; /* Show bottom navigation on mobile */
     }
+
+    
 
     .footer{
         display: none;
