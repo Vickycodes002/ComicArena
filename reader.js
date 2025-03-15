@@ -1,70 +1,90 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Select all comic pages
+    const skeletonLoading = document.querySelector('.skeleton-loading');
     const comicPages = document.querySelectorAll('.comic-page');
+    const navigationControls = document.querySelector('.navigation-controls');
 
-    // Loop through each page and apply loading logic
-    comicPages.forEach((page, index) => {
-        // Create a loading effect element for each page
-        const loadingEffect = document.createElement('div');
-        loadingEffect.classList.add('loading-effect');
-        loadingEffect.innerHTML = '<img src="./media/Comics Arena LogoV2.png" alt="Loading..." class="loading-logo">';
-        page.parentElement.insertBefore(loadingEffect, page);
+    let loadedPages = 0;
 
-        // Hide the page initially
-        page.style.opacity = '0';
+    console.log('Skeleton loading:', skeletonLoading); // Debugging
+    console.log('Comic pages:', comicPages); // Debugging
 
-        // Check if the image is already loaded (e.g., cached)
+    // Show skeleton loading effect before images start loading
+    if (skeletonLoading) {
+        skeletonLoading.style.display = 'flex';
+    }
+
+    // Function to handle page load
+    const handlePageLoad = (page) => {
+        loadedPages++;
+        console.log('Page loaded:', page.src); // Debugging
+        console.log('Loaded pages:', loadedPages); // Debugging
+
+        page.classList.add('loaded'); // Fade in the page
+
+        // Hide skeleton loading effect after all pages are loaded
+        if (loadedPages === comicPages.length && skeletonLoading) {
+            skeletonLoading.style.display = 'none';
+            console.log('All pages loaded.'); // Debugging
+        }
+    };
+
+    // Track page loading
+    comicPages.forEach((page) => {
+        page.style.opacity = '0'; // Start hidden
+
+        // If image is already loaded (cached)
         if (page.complete) {
-            // If already loaded, hide the loading effect and show the page
-            loadingEffect.style.display = 'none';
-            page.style.opacity = '1';
+            console.log('Page already loaded:', page.src); // Debugging
+            handlePageLoad(page);
         } else {
-            // Show the loading effect while the page is loading
-            loadingEffect.style.display = 'block';
+            page.addEventListener('load', () => handlePageLoad(page));
         }
 
-        // When the page is fully loaded
-        page.addEventListener('load', () => {
-            loadingEffect.style.display = 'none'; // Hide loading effect
-            page.style.opacity = '1'; // Show the page
-        });
-
-        // If the page fails to load
+        // If a page fails to load
         page.addEventListener('error', () => {
-            console.error(`Failed to load page ${index + 1}`);
-            loadingEffect.style.display = 'none'; // Hide loading effect even if the page fails
+            loadedPages++;
+            console.error('Failed to load a comic page:', page.src); // Debugging
+
+            // Hide skeleton loading effect if all pages are done (even if some failed)
+            if (loadedPages === comicPages.length && skeletonLoading) {
+                skeletonLoading.style.display = 'none';
+                console.log('All pages attempted to load.'); // Debugging
+            }
         });
     });
 
-    // Navigation buttons logic
-    const navigationControls = document.querySelector('.navigation-controls');
-    const prevIssueButton = document.querySelector('.prev-issue');
-    const nextIssueButton = document.querySelector('.next-issue');
+    // Show navigation controls when the last page is in view
+    if (comicPages.length > 0 && navigationControls) {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && entry.target === comicPages[comicPages.length - 1]) {
+                        navigationControls.classList.add('visible');
+                        console.log('Last page in view.'); // Debugging
+                    } else {
+                        navigationControls.classList.remove('visible');
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
 
-    // Observe when the last page is in view
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    navigationControls.classList.add('visible');
-                } else {
-                    navigationControls.classList.remove('visible');
-                }
-            });
-        },
-        { threshold: 0.5 } // Trigger when 50% of the last page is visible
-    );
-
-    if (comicPages.length > 0) {
         observer.observe(comicPages[comicPages.length - 1]);
     }
 
     // Navigation button functionality
-    prevIssueButton.addEventListener('click', () => {
-        alert('Navigate to previous issue');
-    });
+    const prevIssueButton = document.querySelector('.prev-issue');
+    const nextIssueButton = document.querySelector('.next-issue');
 
-    nextIssueButton.addEventListener('click', () => {
-        alert('Navigate to next issue');
-    });
+    if (prevIssueButton) {
+        prevIssueButton.addEventListener('click', () => {
+            alert('Navigate to previous issue');
+        });
+    }
+
+    if (nextIssueButton) {
+        nextIssueButton.addEventListener('click', () => {
+            alert('Navigate to next issue');
+        });
+    }
 });
