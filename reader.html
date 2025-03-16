@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comic Book Viewer</title>
-  <link rel="stylesheet" href="reader.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Book Viewer</title>
+    <link rel="stylesheet" href="reader.css">
 </head>
+
 <body>
-  <div class="comic-viewer">
-    <!-- Comic Pages -->
-    <div class="comic-page loading" data-page="1">
-      <div class="loader"></div>
-      <img src="./optimized/a.jpg" alt="Page 1" onload="hideLoader(this)">
+    <div class="comic-viewer">
+        <!-- Comic Pages -->
+        <div class="comic-page loading" data-page="1">
+            <div class="loader"></div>
+            <img src="./optimized/a.jpg" alt="Page 1" onload="hideLoader(this)">
+        </div>
+        <div class="comic-page loading" data-page="2">
+            <div class="loader"></div>
+            <img src="./optimized/b.jpg" alt="Page 2" onload="hideLoader(this)">
+        </div>
+        <div class="comic-page loading" data-page="3">
+            <div class="loader"></div>
+            <img src="./optimized/c.jpg" alt="Page 3" onload="hideLoader(this)">
+        </div>
+        <div class="comic-page loading" data-page="3">
+            <div class="loader"></div>
+            <img src="./optimized/page 1.jpg" alt="Page 3" onload="hideLoader(this)">
+        </div>
+        <div class="comic-page loading" data-page="3">
+            <div class="loader"></div>
+            <img src="./optimized/Page 2.jpg" alt="Page 3" onload="hideLoader(this)">
+        </div>
+        <div class="comic-page loading" data-page="3">
+            <div class="loader"></div>
+            <img src="./optimized/page 3.jpg" alt="Page 3" onload="hideLoader(this)">
+        </div>
+        <div class="comic-page loading" data-page="3">
+            <div class="loader"></div>
+            <img src="./optimized/page 4.jpg" alt="Page 3" onload="hideLoader(this)">
+        </div>
+        <div class="comic-page loading" data-page="3">
+            <div class="loader"></div>
+            <img src="./optimized/page 5.jpg" alt="Page 3" onload="hideLoader(this)">
+        </div>
+        <!-- Add more pages as needed -->
     </div>
-    <div class="comic-page loading" data-page="2">
-      <div class="loader"></div>
-      <img src="./optimized/b.jpg" alt="Page 2" onload="hideLoader(this)">
-    </div>
-    <div class="comic-page loading" data-page="3">
-      <div class="loader"></div>
-      <img src="./optimized/c.jpg" alt="Page 3" onload="hideLoader(this)">
-    </div>
-    <div class="comic-page loading" data-page="3">
-        <div class="loader"></div>
-        <img src="./optimized/page 1.jpg" alt="Page 3" onload="hideLoader(this)">
-      </div>
-      <div class="comic-page loading" data-page="3">
-        <div class="loader"></div>
-        <img src="./optimized/Page 2.jpg" alt="Page 3" onload="hideLoader(this)">
-      </div>
-      <div class="comic-page loading" data-page="3">
-        <div class="loader"></div>
-        <img src="./optimized/page 3.jpg" alt="Page 3" onload="hideLoader(this)">
-      </div>
-      <div class="comic-page loading" data-page="3">
-        <div class="loader"></div>
-        <img src="./optimized/page 4.jpg" alt="Page 3" onload="hideLoader(this)">
-      </div>
-      <div class="comic-page loading" data-page="3">
-        <div class="loader"></div>
-        <img src="./optimized/page 5.jpg" alt="Page 3" onload="hideLoader(this)">
-      </div>
-    <!-- Add more pages as needed -->
-  </div>
 
-  <!-- Next Button -->
-  <button class="next-button" onclick="nextPage()">
-    <span>Next</span>
-  </button>
+    <!-- Close Button -->
+    <button class="close-button" onclick="closeViewer()">
+        <span>&times;</span>
+    </button>
 
-  <script src="reader.js"></script>
+    <script src="reader.js"></script>
 </body>
+
 </html>

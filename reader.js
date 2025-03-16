@@ -2,24 +2,20 @@
 function hideLoader(img) {
     const page = img.parentElement;
     page.classList.remove("loading");
+    page.classList.add("loaded");
   }
   
-  // Function to handle next page
-  function nextPage() {
-    const currentPage = document.querySelector(".comic-page:not([hidden])");
-    const nextPage = currentPage.nextElementSibling;
+ // Function to close the comic viewer with fade-out animation
+function closeViewer() {
+    const comicViewer = document.querySelector(".comic-viewer");
+    const closeButton = document.querySelector(".close-button");
   
-    if (nextPage) {
-      currentPage.setAttribute("hidden", true);
-      nextPage.removeAttribute("hidden");
-      nextPage.scrollIntoView({ behavior: "smooth" });
-    } else {
-      alert("You've reached the end of the comic!");
-    }
+    // Apply fade-out animation
+    comicViewer.classList.add("fade-out");
+    closeButton.classList.add("fade-out");
+  
+    // Redirect to description.html after the animation completes
+    setTimeout(() => {
+      window.location.href = "description.html";
+    }, 500); // Match the duration of the fade-out animation
   }
-  
-  // Initialize first page
-  document.addEventListener("DOMContentLoaded", () => {
-    const firstPage = document.querySelector(".comic-page");
-    firstPage.removeAttribute("hidden");
-  });
