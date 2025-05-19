@@ -726,7 +726,7 @@ body {
     .hero-carousel .slide-content {
         max-width: 90%;
         padding: 1rem;
-        bottom: 5%;
+        bottom: 15%;
         left: 5%;
         background: rgba(10, 10, 10, 0.8);
     }
