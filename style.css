@@ -334,7 +334,7 @@ body {
 .comic-arena-special {
     padding: 1.5rem 1rem;
     background-color: var(--bg-dark);
-}
+} */
 
 .comic-arena-special h2 {
     font-size: 1.8rem;
@@ -806,6 +806,6 @@ body {
     }
     
     .special-carousel .special-item {
-        height: 12rem;
+        height: 21rem;
     }
 }
