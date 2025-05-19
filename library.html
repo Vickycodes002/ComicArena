@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse Comics - ComicArena</title>
+    <title>Library - ComicArena</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Your Custom CSS -->
@@ -18,16 +18,163 @@
             <a href="index.html"><img src="./media/Comics Arena LogoV2.png" alt="ComicArena Logo"></a>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</li></a>
+            <li><a href="index.html">Home</a></li>
             <li>
                 <div class="search-container">
                     <input type="text" id="search-input" placeholder="Search comics..." class="search-input">
                     <button id="search-button" class="search-button"><i class="fas fa-search"></i></button>
                 </div>
             </li>
-            <li><a href="#signin" class="signin-button"><i class="fas fa-user"></i></a></li>
+            <li><a href="#settings" class="settings-button"><i class="fas fa-cog"></i></a></li>
         </ul>
     </nav>
+
+    <!-- Settings Modal -->
+    <div class="settings-modal" id="settings-modal">
+        <div class="settings-content">
+            <button class="close-settings"><i class="fas fa-times"></i></button>
+            <h2><i class="fas fa-cog"></i> Settings</h2>
+
+            <div class="settings-section">
+                <h3>User Information</h3>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="user-details">
+                        <p class="username">Guest User</p>
+                        <p class="user-email">guest@example.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Support</h3>
+                <ul class="support-links">
+                    <li><a href="#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    <li><a href="#terms"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="settings-section">
+                <button class="sign-out-btn"><i class="fas fa-sign-out-alt"></i> Sign Out</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="policy-modal" id="privacy-modal">
+        <div class="policy-content">
+            <div class="policy-header">
+                <button class="back-to-settings"><i class="fas fa-arrow-left"></i></button>
+                <h2><i class="fas fa-shield-alt"></i> Privacy Policy</h2>
+            </div>
+            <div class="policy-body">
+                <div class="scroll-content">
+                    <h3>1. Information We Collect</h3>
+                    <p>We collect information to provide better services to all our users. The types of information we
+                        collect include:</p>
+                    <ul>
+                        <li>Account information (username, email address)</li>
+                        <li>Content you create or upload</li>
+                        <li>Information about how you use our services</li>
+                    </ul>
+
+                    <h3>2. How We Use Information</h3>
+                    <p>We use the information we collect to:</p>
+                    <ul>
+                        <li>Provide, maintain, and improve our services</li>
+                        <li>Develop new features and functionality</li>
+                        <li>Protect ComicArena and our users</li>
+                    </ul>
+
+                    <h3>3. Transparency and Choice</h3>
+                    <p>You have choices regarding the information we collect and how it's used:</p>
+                    <ul>
+                        <li>Review and update your account information</li>
+                        <li>Control who you share information with</li>
+                        <li>Delete your account at any time</li>
+                    </ul>
+
+                    <p>Last updated: June 2025</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div class="policy-modal" id="terms-modal">
+        <div class="policy-content">
+            <div class="policy-header">
+                <button class="back-to-settings"><i class="fas fa-arrow-left"></i></button>
+                <h2><i class="fas fa-file-contract"></i> Terms of Service</h2>
+            </div>
+            <div class="policy-body">
+                <div class="scroll-content">
+                    <h3>1. Using Our Services</h3>
+                    <p>By using ComicArena, you agree to these terms:</p>
+                    <ul>
+                        <li>You must follow any policies made available to you</li>
+                        <li>Don't misuse our services or interfere with them</li>
+                        <li>Only use our services as permitted by law</li>
+                    </ul>
+
+                    <h3>2. Your Content</h3>
+                    <p>Our services allow you to upload and store content:</p>
+                    <ul>
+                        <li>You retain ownership of intellectual property rights</li>
+                        <li>By uploading, you grant us license to display your content</li>
+                        <li>You're responsible for content you submit</li>
+                    </ul>
+
+                    <h3>3. Account Termination</h3>
+                    <p>We may suspend or terminate your account if:</p>
+                    <ul>
+                        <li>You violate these terms or our policies</li>
+                        <li>We're investigating suspected misconduct</li>
+                        <li>Required by law or for security reasons</li>
+                    </ul>
+
+                    <p>Effective date: June 2025</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Us Modal -->
+    <div class="policy-modal" id="about-modal">
+        <div class="policy-content">
+            <div class="policy-header">
+                <button class="back-to-settings"><i class="fas fa-arrow-left"></i></button>
+                <h2><i class="fas fa-info-circle"></i> About Us</h2>
+            </div>
+            <div class="policy-body">
+                <div class="scroll-content">
+                    <h3>Our Story</h3>
+                    <p>ComicArena was founded in 2025 with a simple mission: to create the best digital comic reading
+                        experience for fans worldwide. Our team of comic enthusiasts and tech experts came together to
+                        build a platform that celebrates the art of storytelling.</p>
+
+                    <h3>Our Values</h3>
+                    <ul>
+                        <li><strong>Quality:</strong> We're committed to high-quality content and user experience</li>
+                        <li><strong>Community:</strong> We believe in fostering a positive community for fans and
+                            creators</li>
+                        <li><strong>Innovation:</strong> We continuously improve our platform with new features</li>
+                    </ul>
+
+                    <h3>The Team</h3>
+                    <p>We're a diverse team of 15 people based in San Francisco, with backgrounds in comics, technology,
+                        and design. Every team member shares a passion for great stories and beautiful artwork.</p>
+
+                    <h3>Contact Us</h3>
+                    <p>Email: <a href="mailto:hello@comicarena.com">hello@comicarena.com</a><br>
+                        Twitter: <a href="https://twitter.com/comicarena">@ComicArena</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Library Page -->
     <section class="library-page">
@@ -38,7 +185,7 @@
                 <h3><i class="fas fa-bookmark"></i> Read Later</h3>
                 <div class="comic-list">
                     <div class="comic-item">
-                        <img src="./media/Page 16 (1realer).png" alt="Comic 1">
+                        <img src="./media/Page 16 (1realer).png" alt="Comic 1" class="comic-cover">
                         <h4>Realer</h4>
                     </div>
                     <!-- more comics here -->
@@ -50,11 +197,11 @@
                 <h3><i class="fas fa-heart"></i> Liked</h3>
                 <div class="comic-list">
                     <div class="comic-item">
-                        <img src="./media/aisha-corel-2-387x600.jpg" alt="Comic 2">
+                        <img src="./media/aisha-corel-2-387x600.jpg" alt="Comic 2" class="comic-cover">
                         <h4>Aisha</h4>
                     </div>
                     <div class="comic-item">
-                        <img src="./media/joyy.jpg" alt="Comic 3">
+                        <img src="./media/joyy.jpg" alt="Comic 3" class="comic-cover">
                         <h4>Joyy</h4>
                     </div>
                     <!--more comics here -->
@@ -66,11 +213,11 @@
                 <h3><i class="fas fa-history"></i> Recently Read</h3>
                 <div class="comic-list">
                     <div class="comic-item">
-                        <img src="./media/joyy.jpg" alt="Comic 3">
+                        <img src="./media/joyy.jpg" alt="Comic 3" class="comic-cover">
                         <h4>Joyy</h4>
                     </div>
                     <div class="comic-item">
-                        <img src="./media/aisha-corel-2-387x600.jpg" alt="Comic 2">
+                        <img src="./media/aisha-corel-2-387x600.jpg" alt="Comic 2" class="comic-cover">
                         <h4>Aisha</h4>
                     </div>
                     <!--more comics here -->
@@ -85,7 +232,7 @@
             <i class="fas fa-home"></i>
             <span>Home</span>
         </a>
-        <a href="library.html" class="nav-item">
+        <a href="library.html" class="nav-item active">
             <i class="fas fa-book"></i>
             <span>Library</span>
         </a>
@@ -95,20 +242,10 @@
         </a>
     </nav>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p>&copy; 2025 ComicArena. All rights reserved.</p>
-    </footer>
-
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- Your Custom JS -->
-    <script src="script.js"></script>
+    <!-- JS -->
+    <script src="library.js"></script>
 </body>
 
 </html>
