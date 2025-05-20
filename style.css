@@ -270,7 +270,7 @@ body {
 
 .hero-carousel .slide-content p {
     font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-    color: var(--text-primary);
+    color: #cccccc;
     margin-bottom: 1.2rem;
     line-height: 1.5;
 }
