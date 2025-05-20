@@ -1,29 +1,47 @@
-// Optimized JavaScript for ComicArena with Mobile Enhancements
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and optimized');
     
     // Landing Page Transition
-    const landingPage = document.getElementById('landing-page');
-    const enterButton = document.getElementById('enter-button');
-    const mainWebsite = document.getElementById('main-website');
+    $(document).ready(function() {
+    const landingPage = $('#landing-page');
+    const enterButton = $('#enter-button');
+    const mainWebsite = $('#main-website');
     
-    if (enterButton && landingPage && mainWebsite) {
-        enterButton.addEventListener('click', () => {
-            landingPage.style.opacity = '0';
-            
-            // Use requestAnimationFrame for smoother animation
-            requestAnimationFrame(() => {
-                setTimeout(() => {
-                    landingPage.style.display = 'none';
-                    mainWebsite.style.display = 'block';
-                    
-                    // Force reflow to ensure animation starts
-                    void mainWebsite.offsetWidth;
-                    mainWebsite.style.opacity = '1';
-                }, 500);
-            });
-        });
+    // Check if user has already visited
+    if (sessionStorage.getItem('visited') === 'true') {
+        landingPage.hide();
+        mainWebsite.show();
     }
+    
+    // Enter button click handler
+    enterButton.click(function() {
+        // Set session flag
+        sessionStorage.setItem('visited', 'true');
+        
+        // Animate transition
+        landingPage.css('opacity', '0');
+        
+        setTimeout(function() {
+            landingPage.hide();
+            mainWebsite.fadeIn(300);
+        }, 500);
+    });
+    
+    // Handle page refresh on main website
+    $(window).on('beforeunload', function() {
+        if (sessionStorage.getItem('visited') === 'true') {
+            sessionStorage.setItem('refreshed', 'true');
+        }
+    });
+    
+    $(window).on('load', function() {
+        if (sessionStorage.getItem('refreshed') === 'true') {
+            sessionStorage.removeItem('refreshed');
+            landingPage.hide();
+            mainWebsite.show();
+        }
+    });
+});
     
     // Scrolling Header Effect
     window.addEventListener('scroll', () => {

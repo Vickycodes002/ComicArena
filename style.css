@@ -55,6 +55,21 @@ body {
     z-index: -1;
 }
 
+.landing-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 90%;
+}
+
+.logo {
+    width: min(80%, 200px);
+    height: auto;
+    margin-bottom: 2rem;
+    animation: pulse 2s infinite ease-in-out;
+}
+
 .landing-content h1 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     margin-bottom: 1.5rem;
@@ -80,6 +95,34 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(230, 36, 41, 0.3);
 }
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 
 /* Main Website */
 .main-website {
@@ -688,10 +731,24 @@ body {
     .mobile-only {
         display: block;
     }
+     .logo {
+        width: 40%;
+        margin-bottom: 1.5rem;
+    }
+    
+    .landing-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    #enter-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+    }
     
     .landing-page {
         background: url(./media/mobilelandingpage1.jpg) no-repeat center center/cover;
     }
+
     
     .navbar {
         background: none;
@@ -743,7 +800,7 @@ body {
     }
     
     .comic-item h3 {
-        color: #333;
+        color: #909090;
     }
     
     .youtube-embed iframe {
