@@ -17,34 +17,42 @@ $(document).ready(function() {
     // Settings modal functionality
     $('.settings-button').click(function(e) {
         e.preventDefault();
-        $('#settings-modal').addClass('active');
+        $('#settings-modal').addClass('active slide-in');
         $('body').css('overflow', 'hidden');
     });
     
     $('.close-settings').click(function() {
-        $('#settings-modal').removeClass('active');
-        $('body').css('overflow', 'auto');
+        $('#settings-modal').removeClass('slide-in').addClass('slide-out');
+        
+        setTimeout(function() {
+            $('#settings-modal').removeClass('active slide-out');
+            $('body').css('overflow', 'auto');
+        }, 300);
     });
     
     // Close modal when clicking outside
     $('#settings-modal').click(function(e) {
         if ($(e.target).is('#settings-modal')) {
-            $('#settings-modal').removeClass('active');
-            $('body').css('overflow', 'auto');
+            $(this).removeClass('slide-in').addClass('slide-out');
+            
+            setTimeout(function() {
+                $('#settings-modal').removeClass('active slide-out');
+                $('body').css('overflow', 'auto');
+            }, 300);
         }
     });
     
     // Sign out button
     $('.sign-out-btn').click(function() {
-        // Add sign out logic here
+        // sign out logic here
         alert('Sign out functionality would go here');
     });
     
     // Smooth scrolling for comic lists
-    $('.comic-list').on('wheel', function(e) {
-        e.preventDefault();
-        this.scrollLeft += e.originalEvent.deltaY;
-    });
+    // $('.comic-list').on('wheel', function(e) {
+    //     e.preventDefault();
+    //     this.scrollLeft += e.originalEvent.deltaY;
+    // });
     
     // Add hover effects for comic items
     $('.comic-item').hover(
@@ -62,6 +70,7 @@ $(document).ready(function() {
     });
 
 // Policy screens navigation
+
 $('a[href="#privacy"]').click(function(e) {
     e.preventDefault();
     $('#settings-modal').removeClass('active');
@@ -90,12 +99,18 @@ $('.back-to-settings').click(function() {
     
     setTimeout(function() {
         currentModal.removeClass('active slide-out');
-        $('#settings-modal').addClass('active');
+        $('#settings-modal').addClass('active slide-in');
     }, 300);
 });
 
 // Close modal when animation ends (for edge cases)
 $('.policy-modal').on('animationend', function() {
+    if ($(this).hasClass('slide-out') && !$(this).hasClass('active')) {
+        $(this).removeClass('slide-out');
+    }
+});
+
+$('#settings-modal').on('animationend', function() {
     if ($(this).hasClass('slide-out') && !$(this).hasClass('active')) {
         $(this).removeClass('slide-out');
     }
@@ -119,4 +134,5 @@ $('.support-links a').click(function(e) {
     
     $('body').css('overflow', 'hidden');
 });
+
 });
