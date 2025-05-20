@@ -3,77 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comic Details</title>
+    <title>Comic Details - ComicArena</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Your Custom CSS -->
     <link rel="stylesheet" href="description.css">
 </head>
 <body>
-    <!-- Navigation for Desktop -->
-    <nav class="navbar">
-        <div class="logo">
-            <img src="./media/Comics Arena LogoV2.png" alt="ComicArena Logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <!-- <li><a href="browse.html">Browse</a></li> -->
-            <li><a href="#search"><i class="fas fa-search"></i></a></li>
-            <li><a href="#signin" class="signin-button"><i class="fas fa-user"></i></a></li>
-        </ul>
-    </nav>
-
     <!-- Back Arrow for Mobile -->
     <div class="back-arrow">
-        <a href="#"><i class="fas fa-arrow-left"></i></a>
+        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
     </div>
 
     <!-- Comic Details Section -->
     <section class="comic-details">
-        <!-- Cover Image with Like and Notification Icons -->
+        <!-- Cover Image with Overlay Content -->
         <div class="comic-cover">
-            <img src="./media/aisha-corel-2-387x600.jpg" alt="Comic Cover">
-            <div class="action-buttons-on-image">
-                <button class="love-button"><i class="fas fa-heart"></i> <span class="like-count">125</span></button>
-                <button class="notify-button"><i class="fas fa-bell"></i></button>
+            <img src="./media/aisha-corel-2-387x600.jpg" alt="Comic Cover" class="cover-image">
+            
+            <!-- Dark Overlay with Content -->
+            <div class="cover-overlay">
+                <div class="comic-info">
+                    <h1 class="comic-title">Aisha</h1>
+                    <div class="comic-meta">
+                        <span class="comic-genre">Action</span>
+                        <span class="comic-genre">Adventure</span>
+                        <span class="comic-genre">Sci-Fi</span>
+                    </div>
+                    <p class="description short-description">
+                        This is a detailed description of the comic. It provides an overview of the story, characters, and themes. The description is engaging and gives readers a reason to explore further.
+                    </p>
+                    <button class="read-more-btn">Read More</button>
+                    
+                    <!-- Action Buttons Below Description -->
+                    <div class="action-buttons">
+                        <button class="action-button love-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="action-count like-count">125</span>
+                        </button>
+                        <button class="action-button notify-button">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <button class="action-button views-button">
+                            <i class="fas fa-eye"></i>
+                            <span class="action-count view-count">1.2K</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Comic Info -->
-        <div class="comic-info">
-            <h1>Aisha</h1>
-            <p class="description">
-                This is a detailed description of the comic. It provides an overview of the story, characters, and themes. 
-                The description is engaging and gives readers a reason to explore further.
-            </p>
-
-            <!-- Action Buttons for Desktop -->
-            <div class="action-buttons">
-                <button class="love-button"><i class="fas fa-heart"></i> <span class="like-count">125</span></button>
-                <button class="notify-button"><i class="fas fa-bell"></i> Notify Me</button>
-            </div>
-
-            <!-- Available Issues -->
-            <div class="available-issues">
-                <h2>Available Issues</h2>
-                <div class="issues-list">
-                    <div class="issue">
-                        <a href="reader.html"><img src="./media/micman.jpg" alt="Issue 1"></a>
-                        <p>Issue #1</p>
-                    </div>
-                    <div class="issue">
-                        <img src="./media/joyy.jpg" alt="Issue 2">
-                        <p>Issue #2</p>
-                    </div>
-                    <div class="issue">
-                        <img src="./media/New_Warriors_Vol_4_4.jpg" alt="Issue 3">
-                        <p>Issue #3</p>
-                    </div>
-                    <!-- Add more issues as needed -->
+        <!-- Available Issues -->
+        <div class="available-issues">
+            <h2>Available Issues</h2>
+            <div class="issues-list">
+                <div class="issue">
+                    <a href="reader.html">
+                        <img src="./media/micman.jpg" alt="Issue 1">
+                    </a>
+                    <p>Issue #1</p>
+                </div>
+                <div class="issue">
+                    <img src="./media/joyy.jpg" alt="Issue 2">
+                    <p>Issue #2</p>
+                </div>
+                <div class="issue">
+                    <img src="./media/New_Warriors_Vol_4_4.jpg" alt="Issue 3">
+                    <p>Issue #3</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Description Modal (Bottom Sheet) -->
+    <div class="description-modal" id="description-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>About This Comic</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-genres">
+                    <span class="genre-tag">Action</span>
+                    <span class="genre-tag">Adventure</span>
+                    <span class="genre-tag">Sci-Fi</span>
+                </div>
+                <p class="modal-description">
+                    This is a detailed description of the comic. It provides an overview of the story, characters, and themes. The description is engaging and gives readers a reason to explore further. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p>
+            </div>
+        </div>
+    </div>
 
     <!-- Bottom Navigation Bar -->
     <nav class="bottom-nav">
@@ -91,17 +111,8 @@
         </a>
     </nav>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p>&copy; 2023 ComicVerse. All rights reserved.</p>
-    </footer>
-
-    <!-- Your Custom JS -->
-    <script src="script.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="description.js"></script>
 </body>
 </html>
