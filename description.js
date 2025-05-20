@@ -40,12 +40,4 @@ $(document).ready(function() {
             this.scrollLeft += e.originalEvent.deltaY;
         }
     });
-    
-    // Page transition effect
-    $('a[href*=".html"]').not('[href^="#"]').click(function(e) {
-        e.preventDefault();
-        $('body').fadeOut(200, function() {
-            window.location.href = $(e.target).closest('a').attr('href');
-        });
-    });
 });
