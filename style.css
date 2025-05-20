@@ -63,7 +63,7 @@ body {
     max-width: 90%;
 }
 
-.logo {
+.logo1 {
     width: min(80%, 200px);
     height: auto;
     margin-bottom: 2rem;
@@ -731,7 +731,7 @@ body {
     .mobile-only {
         display: block;
     }
-     .logo {
+     .logo1 {
         width: 40%;
         margin-bottom: 1.5rem;
     }
