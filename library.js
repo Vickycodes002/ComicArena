@@ -36,7 +36,7 @@ $(document).ready(function() {
     
     // Sign out button
     $('.sign-out-btn').click(function() {
-        // Add your sign out logic here
+        // Add sign out logic here
         alert('Sign out functionality would go here');
     });
     
@@ -60,8 +60,6 @@ $(document).ready(function() {
     $('.mobile-menu-toggle').click(function() {
         $('.nav-links').toggleClass('active');
     });
-
-    // Add to your existing script.js
 
 // Policy screens navigation
 $('a[href="#privacy"]').click(function(e) {

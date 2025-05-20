@@ -19,7 +19,7 @@ body {
     color: var(--text-primary);
     min-height: 100vh;
     position: relative;
-    padding-bottom: 60px; /* Space for bottom nav */
+    padding-bottom: 60px;
 }
 
 /* Navigation Bar */
@@ -85,7 +85,7 @@ body {
 .search-container {
     display: flex;
     align-items: center;
-    background-color: #2a2a2a;
+    /* background-color: #2a2a2a; */
     border-radius: 30px;
     padding: 8px 10px;
     transition: all var(--transition-speed) ease;
@@ -137,7 +137,7 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 2000;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
     overflow-y: auto;
 }
 
@@ -148,15 +148,15 @@ body {
 
 .settings-content {
     background-color: var(--darker-bg);
-    width: 90%;
+    width: 85%;
     max-width: 500px;
-    margin: 20px auto;
+    margin:  auto;
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
     position: relative;
     transform: translateY(-20px);
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 
 .settings-modal.active .settings-content {
@@ -514,14 +514,14 @@ body {
     align-items: center;
     color: var(--text-primary);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 0.8rem;
     transition: all var(--transition-speed);
-    padding: 5px 10px;
-    border-radius: 8px;
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.5rem;
 }
 
 .nav-item i {
-    font-size: 22px;
+    font-size: 15px;
     margin-bottom: 5px;
 }
 
